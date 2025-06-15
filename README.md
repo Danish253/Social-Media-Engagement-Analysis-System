@@ -1,11 +1,12 @@
-Social Media Engagement Analysis System
-Abstract
+# Social Media Engagement Analysis System
+
+# Abstract
 This project implements a scalable pipeline for processing social media post data in near real-time to predict potential engagement levels. Utilizing Apache Kafka as a distributed messaging bus, incoming social media posts are ingested via a FastAPI producer service. A separate FastAPI consumer service subscribes to the data stream, preprocesses the messages using pre-trained machine learning artifacts (TF-IDF, One-Hot Encoding, trained classification models), and predicts whether a post is likely to achieve "High" or "NotHigh" engagement. The system leverages Python with asynchronous capabilities provided by asyncio and aiokafka, alongside scikit-learn, numpy, and scipy for machine learning tasks, offering a modular and responsive solution for data-driven insights into social media content performance.
 
-Problem Statement
+# Problem Statement
 In the realm of social media content creation and marketing, understanding and predicting the potential engagement of a post before or shortly after publication is crucial for optimizing content strategy, resource allocation, and targeted advertising. Manually evaluating the likelihood of high engagement is inefficient and subjective. The core problem addressed by this project is the need for an automated, scalable, and data-driven system that can ingest a stream of social media posts and predict their engagement potential in a timely manner, allowing content creators and marketers to make informed decisions. This requires handling potentially high volumes of data, performing complex data transformations (like text processing and feature engineering) in real-time or near real-time, and deploying a trained machine learning model for inference.
 
-Introduction
+# Introduction
 Social media has become a primary channel for communication, information dissemination, and marketing. For individuals and organizations alike, achieving high engagement on social media platforms translates to increased visibility, wider reach, and greater impact. However, the sheer volume and velocity of social media data make it challenging to discern which content resonates most with the audience. Predictive modeling offers a powerful approach to anticipate content performance.
 
 This project establishes an end-to-end pipeline designed to tackle this challenge. By integrating FastAPI for building efficient API services and Apache Kafka for handling high-throughput data streams, the system is architected for scalability and resilience. New social media post data enters the system through a producer API, is queued in Kafka, and is then consumed by a processing service. This consumer service is equipped with a pre-trained machine learning model capable of analyzing the characteristics of each post (including text content, platform, and metadata) and predicting its engagement category. The development process, detailed in the accompanying Jupyter notebook, covers data preprocessing, feature engineering, model training, and artifact persistence, ensuring that the deployed system utilizes a robust and evaluated predictive model. The outcome is a system that can provide valuable insights into content performance potential, enabling proactive content optimization strategies.
